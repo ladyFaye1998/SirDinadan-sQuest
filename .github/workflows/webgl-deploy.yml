@@ -1,6 +1,9 @@
 name: Build and Deploy Unity WebGL
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch: 
 
 permissions:
@@ -13,11 +16,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Instantly disable WebGL compression in the project settings via stream editor
+      # Instantly disable WebGL compression in the project settings
       - name: Disable Compression
         run: sed -i 's/webGLCompressionFormat: .*/webGLCompressionFormat: 0/g' ProjectSettings/ProjectSettings.asset
 
-      # Compiles the WebGL build using GameCI
+      # Compiles the WebGL build
       - name: Unity WebGL Build
         uses: game-ci/unity-builder@v4
         env:
