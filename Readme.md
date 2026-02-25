@@ -1,4 +1,4 @@
-![Sir Dinadan's Quest Banner](banner.png)
+![Sir Dinadan's Quest Banner](banner.jpg)
 
 # Sir Dinadan's Quest
 
