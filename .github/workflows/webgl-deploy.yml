@@ -16,9 +16,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Instantly disable WebGL compression in the project settings
+      # Instantly disable WebGL compression using a literal block
       - name: Disable Compression
-        run: sed -i 's/webGLCompressionFormat: .*/webGLCompressionFormat: 0/g' ProjectSettings/ProjectSettings.asset
+        run: |
+          sed -i 's/webGLCompressionFormat: .*/webGLCompressionFormat: 0/g' ProjectSettings/ProjectSettings.asset
 
       # Compiles the WebGL build
       - name: Unity WebGL Build
