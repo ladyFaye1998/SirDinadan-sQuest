@@ -1,0 +1,32 @@
+name: Build and Deploy Unity WebGL
+
+on:
+  workflow_dispatch: # Allows you to trigger this manually
+
+permissions:
+  contents: write # Required to push to the gh-pages branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Compiles the WebGL build using GameCI
+      - name: Unity WebGL Build
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: WebGL
+          buildName: SirDinadan
+          allowDirtyBuild: true
+
+      # Pushes the compiled build to a new hosting branch
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: build/WebGL
