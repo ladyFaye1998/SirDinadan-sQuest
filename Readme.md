@@ -16,7 +16,7 @@ To run the pre-compiled native build on your machine:
 3. Open the folder and double-click `Sir Dinadan's Quest.exe` to launch the game.
 
 ### 📜 The Legend of Sir Dinadan
-In Arthurian legend—particularly within the Prose *Tristan* and Thomas Malory's *Le Morte d'Arthur*—Sir Dinadan stands out as the pragmatic, satirical voice of reason among the Knights of the Round Table. Renowned for his sharp wit and pragmatic humor, Dinadan famously rejected the exaggerated tropes of courtly love and the senseless injuries of jousting. This game brings his pragmatic approach to medieval life into an interactive, pixel-art format.
+In Arthurian legend—particularly within the Prose *Tristan* and Thomas Malory's *Le Morte d'Arthur*—Sir Dinadan stands out as the pragmatic, satirical voice of reason among the Knights of the Round Table. Renowned for his sharp wit and pragmatic humor, Dinadan famously rejected the exaggerated tropes of courtly love and the senseless injuries of jousting. 
 
 ### 🕹️ Controls
 * **Movement:** Keyboard (WASD / Arrows)
@@ -31,4 +31,4 @@ The live web version is fully automated using a custom GitHub Actions pipeline. 
 *Note: All visual assets and 2D pixel sprites utilized in this build are free assets sourced from the [Unity Asset Store](https://assetstore.unity.com/).*
 
 ### 🤝 Collaborations & Future Development
-I am always open to collaborations! My current technical focus is bridging AI architecture with creative development. Moving forward, I am actively expanding my skillset into graphic design and both 2D and 3D world-building for future game development projects.
+I am always open to collaborations! My current technical focus is bridging AI architecture with creative development. Moving forward, I am actively expanding my skillset into graphic design and both 2D and 3D world-building for future indie (or not) game development projects.
