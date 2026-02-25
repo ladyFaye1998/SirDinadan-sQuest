@@ -13,6 +13,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # Instantly disable WebGL compression in the project settings via stream editor
+      - name: Disable Compression
+        run: sed -i 's/webGLCompressionFormat: .*/webGLCompressionFormat: 0/g' ProjectSettings/ProjectSettings.asset
+
       # Compiles the WebGL build using GameCI
       - name: Unity WebGL Build
         uses: game-ci/unity-builder@v4
@@ -25,9 +29,9 @@ jobs:
           buildName: SirDinadan
           allowDirtyBuild: true
 
-      # Pushes the compiled build to a new hosting branch
+      # Pushes the compiled build to the hosting branch
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: build/WebGL
+          folder: build/WebGL/SirDinadan
