@@ -16,10 +16,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Instantly disable WebGL compression using a literal block
-      - name: Disable Compression
+      # Inject C# Editor script to force-disable WebGL compression via Unity API
+      - name: Inject Compression Override
         run: |
-          sed -i 's/webGLCompressionFormat: .*/webGLCompressionFormat: 0/g' ProjectSettings/ProjectSettings.asset
+          mkdir -p Assets/Editor
+          cat << 'EOF' > Assets/Editor/DisableCompression.cs
+          using UnityEditor;
+          public class DisableCompression {
+              [InitializeOnLoadMethod]
+              static void Disable() {
+                  PlayerSettings.WebGL.compressionFormat = WebGLCompressionFormat.Disabled;
+              }
+          }
+          EOF
 
       # Compiles the WebGL build
       - name: Unity WebGL Build
